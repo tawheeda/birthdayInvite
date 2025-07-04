@@ -3,110 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Birthday Bash Invite 🎉</title>
+  <title>Birthday Invitation</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
-      color: #f2f2f2;
+      background: #111;
+      color: #eee;
       text-align: center;
       padding: 2rem;
+      line-height: 1.6;
     }
     h1 {
-      font-size: 2.8rem;
-      color: #00d4ff;
+      font-size: 2.4rem;
+      color: #00bfa5;
+      margin-bottom: 1rem;
     }
     .details {
-      background: #333;
+      background-color: #1c1c1c;
       padding: 2rem;
       margin: 2rem auto;
       max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
-    .rsvp {
-      margin-top: 2rem;
-      font-weight: bold;
-    }
-    .btn {
-      margin-top: 2rem;
-      background: #00d4ff;
-      color: #000;
-      padding: 0.8rem 2rem;
-      border: none;
       border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: background 0.3s ease-in-out;
-    }
-    .btn:hover {
-      background: #00aacc;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
     }
     .photos {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
     }
     .photos img {
       width: 120px;
       height: 120px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #00d4ff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      border: 2px solid #00bfa5;
     }
-    .photo-names {
+    .names {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 0.5rem;
       font-weight: 600;
       color: #ccc;
+      margin-bottom: 1.5rem;
     }
-    a {
-      color: #00d4ff;
+    .info {
+      font-size: 1.05rem;
+      color: #ccc;
+    }
+    .info strong {
+      color: #fff;
+    }
+    .rsvp {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    .rsvp a {
+      color: #00bfa5;
       text-decoration: none;
+    }
+    .btn {
+      margin-top: 2rem;
+      background: transparent;
+      border: 2px solid #00bfa5;
+      color: #00bfa5;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background: #00bfa5;
+      color: #111;
     }
   </style>
 </head>
 <body>
-  <h1>🎉 You're Invited to the Ultimate Gents' Birthday Bash</h1>
+
+  <h1>You’re Invited</h1>
 
   <div class="photos">
     <img src="sibs.jpg" alt="Sibs">
     <img src="thato.jpg" alt="Thato">
     <img src="sexa45.jpg" alt="Sexa45">
   </div>
-  <div class="photo-names">
+
+  <div class="names">
     <span>Sibs</span>
     <span>Thato</span>
     <span>Sexa45</span>
   </div>
 
   <div class="details">
-    <p>🔥 It’s time to level up the vibes!</p>
-    <p>You're officially invited to celebrate the birthdays of the bros:</p>
-    <h2>Sibs, Thato & Sexa45</h2>
-    <p>📅 <strong>26th of July</strong></p>
-    <p>📍 <strong>Leondale</strong> (Full address dropping soon)</p>
-    
+    <p class="info">
+      You’re invited to join us for a joint birthday celebration in honour of <strong>Sibs, Thato</strong> and <strong>Sexa45</strong>.
+    </p>
+    <p class="info">
+      <strong>Date:</strong> 26th July<br/>
+      <strong>Location:</strong> Leondale (Exact address will be shared closer to the day)
+    </p>
+
     <div class="rsvp">
-      <p>💬 Hit us up to RSVP:</p>
-      <p>📱 Thato: <a href="tel:+27686051972">+27 68 605 1972</a></p>
-      <p>📱 Sibs: <a href="tel:0839717172">083 971 7172</a></p>
-      <p>📱 Zano: <a href="tel:+27738174751">+27 73 817 4751</a></p>
+      <p><strong>Kindly RSVP:</strong></p>
+      <p>Thato — <a href="tel:+27686051972">+27 68 605 1972</a></p>
+      <p>Sibs — <a href="tel:0839717172">083 971 7172</a></p>
+      <p>Zano — <a href="tel:+27738174751">+27 73 817 4751</a></p>
     </div>
   </div>
 
-  <button class="btn" onclick="showMessage()">Tap for a Quick Word 🕶️</button>
+  <button class="btn" onclick="showNote()">More Info</button>
 
   <script>
-    function showMessage() {
-      alert("🔥 Gents' night out loading... Bring the crew, bring the energy. It's gonna be one for the books!");
+    function showNote() {
+      alert("Dress code: All Black. Drinks and good company guaranteed. We look forward to seeing you there.");
     }
   </script>
+
 </body>
 </html>
