@@ -12,57 +12,78 @@
       text-align: center;
       padding: 2rem;
       line-height: 1.6;
+      margin: 0;
     }
+
     h1 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       color: #00bfa5;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
-    .details {
-      background-color: #1c1c1c;
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 600px;
-      border-radius: 8px;
+
+    .invite-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #1c1c1c;
+      border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      padding: 2rem;
     }
-    .photos {
+
+    .guest-group {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
-    .photos img {
+
+    .guest {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 120px;
-      height: 120px;
+    }
+
+    .guest img {
+      width: 100px;
+      height: 100px;
       object-fit: cover;
       border-radius: 50%;
-      border: 2px solid #00bfa5;
+      border: 3px solid #00bfa5;
+      margin-bottom: 0.5rem;
     }
-    .names {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+
+    .guest span {
       font-weight: 600;
       color: #ccc;
-      margin-bottom: 1.5rem;
     }
+
     .info {
       font-size: 1.05rem;
       color: #ccc;
+      margin-bottom: 1.5rem;
     }
+
     .info strong {
       color: #fff;
     }
+
     .rsvp {
-      margin-top: 2rem;
       font-size: 1rem;
+      color: #ccc;
+      margin-top: 2rem;
     }
+
+    .rsvp p {
+      margin: 0.3rem 0;
+    }
+
     .rsvp a {
       color: #00bfa5;
       text-decoration: none;
     }
+
     .btn {
       margin-top: 2rem;
       background: transparent;
@@ -74,9 +95,22 @@
       font-weight: bold;
       transition: background 0.3s ease-in-out;
     }
+
     .btn:hover {
       background: #00bfa5;
       color: #111;
+    }
+
+    @media (max-width: 500px) {
+      .guest-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .guest {
+        width: 100%;
+        max-width: 200px;
+      }
     }
   </style>
 </head>
@@ -84,26 +118,36 @@
 
   <h1>You’re Invited</h1>
 
-  <div class="photos">
-    <img src="sibs.jpg" alt="Sibs">
-    <img src="thato.jpg" alt="Thato">
-    <img src="sexa45.jpg" alt="Sexa45">
-  </div>
+  <div class="invite-container">
 
-  <div class="names">
-    <span>Sibs</span>
-    <span>Thato</span>
-    <span>Sexa45</span>
-  </div>
+    <div class="guest-group">
+      <div class="guest">
+        <img src="sibs.jpg" alt="Sibs">
+        <span>Sibs</span>
+      </div>
+      <div class="guest">
+        <img src="thato.jpg" alt="Thato">
+        <span>Thato</span>
+      </div>
+      <div class="guest">
+        <img src="sexa45.jpg" alt="Sexa45">
+        <span>Sexa45</span>
+      </div>
+    </div>
 
-  <div class="details">
-    <p class="info">
-      You’re invited to join us for a joint birthday celebration in honour of <strong>Sibs, Thato</strong> and <strong>Sexa45</strong>.
-    </p>
-    <p class="info">
+    <div class="info">
+      You’re invited to a joint birthday celebration for <strong>Sibs</strong>, <strong>Thato</strong>, and <strong>Sexa45</strong>.
+    </div>
+
+    <div class="info">
       <strong>Date:</strong> 26th July<br/>
-      <strong>Location:</strong> Leondale (Exact address will be shared closer to the day)
-    </p>
+      <strong>Location:</strong> Leondale<br/>
+      (Full address to be shared closer to the day)
+    </div>
+
+    <div class="info">
+      <strong>Dress Code:</strong> All Black
+    </div>
 
     <div class="rsvp">
       <p><strong>Kindly RSVP:</strong></p>
@@ -111,13 +155,13 @@
       <p>Sibs — <a href="tel:0839717172">083 971 7172</a></p>
       <p>Zano — <a href="tel:+27738174751">+27 73 817 4751</a></p>
     </div>
-  </div>
 
-  <button class="btn" onclick="showNote()">More Info</button>
+    <button class="btn" onclick="showNote()">More Info</button>
+  </div>
 
   <script>
     function showNote() {
-      alert("Dress code: All Black. Drinks and good company guaranteed. We look forward to seeing you there.");
+      alert("All Black. Smart Casual. Pull up sharp — it's going to be a great night with the gents.");
     }
   </script>
 
