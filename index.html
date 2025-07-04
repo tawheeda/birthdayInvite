@@ -33,12 +33,15 @@
     .guest-group {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
       margin-bottom: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
     }
 
     .guest {
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -49,7 +52,6 @@
       width: 100px;
       height: 100px;
       object-fit: cover;
-      border-radius: 50%;
       border: 3px solid #00bfa5;
       margin-bottom: 0.5rem;
     }
@@ -100,18 +102,6 @@
       background: #00bfa5;
       color: #111;
     }
-
-    @media (max-width: 500px) {
-      .guest-group {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .guest {
-        width: 100%;
-        max-width: 200px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -161,7 +151,7 @@
 
   <script>
     function showNote() {
-      alert("All Black. Smart Casual. Pull up sharp — it's going to be a great night with the gents.");
+      alert("All Black. Smart Casual. Come through sharp — it’s going to be a great night.");
     }
   </script>
 
