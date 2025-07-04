@@ -11,7 +11,6 @@
       color: #eee;
       text-align: center;
       padding: 2rem;
-      line-height: 1.6;
       margin: 0;
     }
 
@@ -22,7 +21,7 @@
     }
 
     .invite-container {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
       background: #1c1c1c;
       border-radius: 10px;
@@ -30,33 +29,21 @@
       padding: 2rem;
     }
 
-    .guest-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
+    .slideshow {
+      position: relative;
+      margin-bottom: 1.5rem;
     }
 
-    .guest {
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 120px;
-    }
-
-    .guest img {
-      width: 100px;
-      height: 100px;
+    .slideshow img {
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border: 3px solid #00bfa5;
-      margin-bottom: 0.5rem;
     }
 
-    .guest span {
+    .name-tag {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: #ccc;
     }
@@ -75,10 +62,6 @@
       font-size: 1rem;
       color: #ccc;
       margin-top: 2rem;
-    }
-
-    .rsvp p {
-      margin: 0.3rem 0;
     }
 
     .rsvp a {
@@ -109,20 +92,11 @@
   <h1>You’re Invited</h1>
 
   <div class="invite-container">
-
-    <div class="guest-group">
-      <div class="guest">
-        <img src="sibs.jpg" alt="Sibs">
-        <span>Sibs</span>
-      </div>
-      <div class="guest">
-        <img src="thato.jpg" alt="Thato">
-        <span>Thato</span>
-      </div>
-      <div class="guest">
-        <img src="sexa45.jpg" alt="Sexa45">
-        <span>Sexa45</span>
-      </div>
+    
+    <!-- Slideshow Section -->
+    <div class="slideshow">
+      <img id="slideshow-image" src="sibs.jpg" alt="Sibs">
+      <div class="name-tag" id="slideshow-name">Sibs</div>
     </div>
 
     <div class="info">
@@ -150,6 +124,19 @@
   </div>
 
   <script>
+    const images = ["sibs.jpg", "thato.jpg", "sexa45.jpg"];
+    const names = ["Sibs", "Thato", "Sexa45"];
+    let current = 0;
+
+    function showNextSlide() {
+      current = (current + 1) % images.length;
+      document.getElementById("slideshow-image").src = images[current];
+      document.getElementById("slideshow-name").textContent = names[current];
+    }
+
+    // Change every 3 seconds
+    setInterval(showNextSlide, 3000);
+
     function showNote() {
       alert("All Black. Smart Casual. Come through sharp — it’s going to be a great night.");
     }
