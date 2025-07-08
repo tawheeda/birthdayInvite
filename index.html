@@ -6,32 +6,35 @@
   <title>Birthday Invitation</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #111;
-      color: #eee;
-      text-align: center;
-      padding: 2rem;
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #eee;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .invite-container {
+      max-width: 600px;
+      background: rgba(28, 28, 28, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      padding: 2rem;
+      text-align: center;
     }
 
     h1 {
       font-size: 2rem;
       color: #00bfa5;
       margin-bottom: 2rem;
-    }
-
-    .invite-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #1c1c1c;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      padding: 2rem;
-    }
-
-    .slideshow {
-      position: relative;
-      margin-bottom: 1.5rem;
     }
 
     .slideshow img {
@@ -51,7 +54,7 @@
     .info {
       font-size: 1.05rem;
       color: #ccc;
-      margin-bottom: 1.5rem;
+      margin: 1.2rem 0;
     }
 
     .info strong {
@@ -61,7 +64,7 @@
     .rsvp {
       font-size: 1rem;
       color: #ccc;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .rsvp a {
@@ -89,38 +92,39 @@
 </head>
 <body>
 
-  <h1>You’re Invited</h1>
+  <div class="overlay">
+    <div class="invite-container">
+      <h1>You’re Invited</h1>
 
-  <div class="invite-container">
-    
-    <!-- Slideshow Section -->
-    <div class="slideshow">
-      <img id="slideshow-image" src="sibs.jpg" alt="Sibs">
-      <div class="name-tag" id="slideshow-name">Sibs</div>
+      <!-- Slideshow Section -->
+      <div class="slideshow">
+        <img id="slideshow-image" src="sibs.jpg" alt="Sibs">
+        <div class="name-tag" id="slideshow-name">Sibs</div>
+      </div>
+
+      <div class="info">
+        You’re invited to a joint birthday celebration for <strong>Sibs</strong>, <strong>Thato</strong>, and <strong>Sexa45</strong>.
+      </div>
+
+      <div class="info">
+        <strong>Date:</strong> 26th July<br/>
+        <strong>Location:</strong> Leondale<br/>
+        (Full address to be shared closer to the day)
+      </div>
+
+      <div class="info">
+        <strong>Dress Code:</strong> All Black
+      </div>
+
+      <div class="rsvp">
+        <p><strong>Kindly RSVP:</strong></p>
+        <p>Thato — <a href="tel:+27686051972">+27 68 605 1972</a></p>
+        <p>Sibs — <a href="tel:0839717172">083 971 7172</a></p>
+        <p>Zano — <a href="tel:+27738174751">+27 73 817 4751</a></p>
+      </div>
+
+      <button class="btn" onclick="showNote()">More Info</button>
     </div>
-
-    <div class="info">
-      You’re invited to a joint birthday celebration for <strong>Sibs</strong>, <strong>Thato</strong>, and <strong>Sexa45</strong>.
-    </div>
-
-    <div class="info">
-      <strong>Date:</strong> 26th July<br/>
-      <strong>Location:</strong> Leondale<br/>
-      (Full address to be shared closer to the day)
-    </div>
-
-    <div class="info">
-      <strong>Dress Code:</strong> All Black
-    </div>
-
-    <div class="rsvp">
-      <p><strong>Kindly RSVP:</strong></p>
-      <p>Thato — <a href="tel:+27686051972">+27 68 605 1972</a></p>
-      <p>Sibs — <a href="tel:0839717172">083 971 7172</a></p>
-      <p>Zano — <a href="tel:+27738174751">+27 73 817 4751</a></p>
-    </div>
-
-    <button class="btn" onclick="showNote()">More Info</button>
   </div>
 
   <script>
@@ -134,11 +138,10 @@
       document.getElementById("slideshow-name").textContent = names[current];
     }
 
-    // Change every 3 seconds
     setInterval(showNextSlide, 3000);
 
     function showNote() {
-      alert("All Black. Smart Casual. Come through sharp — it’s going to be a great night.");
+      alert("All Black. Smart Casual. Come through sharp — it’s going to be a great night. DISCLAIMER: BRING YOUR OWN ALCOHOL");
     }
   </script>
 
